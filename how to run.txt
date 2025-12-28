@@ -1,0 +1,11 @@
+make
+sudo insmod queue_driver.ko
+sudo chmod 666 /dev/vicharak
+
+gcc configurator.c -o configurator
+gcc filler.c -o filler
+gcc reader.c -o reader
+
+./configurator
+./reader   (will BLOCK until filler runs)
+./filler
